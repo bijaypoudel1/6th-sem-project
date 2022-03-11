@@ -1,4 +1,4 @@
 # freelancing_project
 
- # Flutter project.
+ # Flutter application.
 
