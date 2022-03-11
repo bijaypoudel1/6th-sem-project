@@ -21,9 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
     // IncomingScreen(),
     // OutgoingScreen(),
     // ActivityScreen(),
-    Text('first screen'),
-    Text('second screen'),
-    Text('third screen'),
+    Text('first page'),
+    Text('second page'),
+    Text('third page'),
   ];
   @override
   Widget build(BuildContext context) {
