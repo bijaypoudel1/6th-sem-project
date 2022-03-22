@@ -1,4 +1,4 @@
-#Fri Mar 11 13:30:05 NPT 2022
+#Tue Mar 22 16:31:16 NPT 2022
 base.0=/home/mint/StudioProjects/6th-sem-project/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
