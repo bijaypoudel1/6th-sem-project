@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:freelancing_project/screens/Home/dashboard.dart';
+import 'package:freelancing_project/screens/search/search.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -21,20 +23,37 @@ class _HomeScreenState extends State<HomeScreen> {
     // IncomingScreen(),
     // OutgoingScreen(),
     // ActivityScreen(),
-    Text('first page'),
+    const Dashboard(),
     Text('second page'),
     Text('third page'),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBar(
+        actions: [
+          GestureDetector(
+            onTap: (){
+                Navigator.pushNamed(context, SearchScreen.routeName);
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(right: 16),
+              child: Icon(Icons.search,color: Colors.black,size: 25,),
+            ),
+          )
+        ],
+        title:const Text('Bpro Freelancing',style: TextStyle(
+          color: Colors.black,
+        ),),
+        leading: Image.asset('assets/images/appbar-logo.png'),
+        backgroundColor: const Color(0xffFFFEF7),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: onItemTapped,
         // selectedItemColor: Color(0xff3584FB),
-        selectedItemColor: Color(0xff333333),
-        selectedLabelStyle: TextStyle(
+        selectedItemColor: const Color(0xff333333),
+        selectedLabelStyle:const TextStyle(
             fontWeight: FontWeight.w500,
             color: Color(0xff333333),
             fontSize: 12
@@ -76,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child:  Padding(
                   padding: EdgeInsets.symmetric(horizontal: 14),
-                  child: Icon(Icons.call_received,color: Color(0xff2A7DFB),size: 20,),
+                  child: Icon(Icons.search_outlined,color: Color(0xff2A7DFB),size: 20,),
                 )):
             Container(
                 decoration: BoxDecoration(
@@ -85,9 +104,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child:  Padding(
                   padding:  EdgeInsets.symmetric(horizontal: 14),
-                  child: Icon(Icons.call_received,color: Color(0xff4F4F4F),size: 20,),
+                  child: Icon(Icons.search_outlined,color: Color(0xff4F4F4F),size: 20,),
                 )),
-            label: "Incoming",
+            label: "Search",
           ),
           BottomNavigationBarItem(
             icon: selectedIndex==2 ?
@@ -98,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child:  Padding(
                   padding: EdgeInsets.symmetric(horizontal: 14),
-                  child: Icon(Icons.north_east,color: Color(0xff2A7DFB),size: 20,),
+                  child: Icon(Icons.account_circle_outlined,color: Color(0xff2A7DFB),size: 20,),
                 )):
             Container(
                 decoration: BoxDecoration(
@@ -107,13 +126,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child:  Padding(
                   padding:  EdgeInsets.symmetric(horizontal: 14),
-                  child: Icon(Icons.north_east,color: Color(0xff4F4F4F),size: 20,),
+                  child: Icon(Icons.account_circle_outlined,color: Color(0xff4F4F4F),size: 20,),
                 )),
-            label: "Outgoing",
+            label: "Profile",
           ),
-
-
-
         ],
       ),
       body:Center(
